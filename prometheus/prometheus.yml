@@ -12,4 +12,10 @@ scrape_configs:
     metrics_path: "/_prometheus/metrics"
     static_configs:
       - targets: ['elasticsearch:9200']
-
+  - job_name: 'aap-controller'
+    metrics_path: "/api/controller/v2/metrics/"
+    static_configs:
+      - targets: ['aap:443']
+    basic_auth:
+      username: "admin"
+      password: ""

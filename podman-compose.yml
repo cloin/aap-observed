@@ -87,6 +87,10 @@ services:
     networks:
       - observability
 
+volumes:
+  esdata:
+    driver: local
+
 networks:
   elk:
   observability:

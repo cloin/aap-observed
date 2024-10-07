@@ -16,6 +16,9 @@ scrape_configs:
     metrics_path: "/api/controller/v2/metrics/"
     static_configs:
       - targets: ['aap:443']
+    scheme: "https"
+    tls_config:
+      insecure_skip_verify: true
     basic_auth:
       username: "admin"
       password: ""

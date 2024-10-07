@@ -2,14 +2,16 @@ receivers:
   otlp:
     protocols:
       grpc:
+        endpoint: "0.0.0.0:4317"
       http:
+        endpoint: "0.0.0.0:4318"
 
 exporters:
   otlp:
-    endpoint: "jaeger:4317"  # Default gRPC endpoint for Jaeger.
+    endpoint: "jaeger:4317"
 
   prometheus:
-    endpoint: "0.0.0.0:8889"  # Changed the port to 8889 to avoid conflict.
+    endpoint: "0.0.0.0:8889"
 
 service:
   pipelines:
